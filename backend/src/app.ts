@@ -31,9 +31,11 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   res.status(500).json({ message: err.message });
 });
 
-app.listen(5000, () => {
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
   console.log(
     path.resolve(__dirname, "../", "../", "frontend", "build", "index.html")
   );
-  console.log("server up runing on port 5000");
+  console.log("server up runing on port ", port);
 });
