@@ -19,11 +19,14 @@ app.use((0, cors_1.default)());
 app.use((0, body_parser_1.json)());
 app.use("/api/todos", todos_1.default);
 // for production
-app.use(express_1.default.static(path_1.default.join(__dirname, '../frontend/build')));
-app.get('*', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, '..frontend/build'));
+app.use(express_1.default.static(path_1.default.join(__dirname, "../../frontend/build")));
+app.get("*", (req, res) => {
+    res.sendFile(path_1.default.resolve(__dirname, "../", "../", "frontend", "build", "index.html"));
 });
 app.use((err, req, res, next) => {
     res.status(500).json({ message: err.message });
 });
-app.listen(5000, () => console.log('server up runing'));
+app.listen(5000, () => {
+    console.log(path_1.default.resolve(__dirname, "../", "../", "frontend", "build", "index.html"));
+    console.log("server up runing on port 5000");
+});

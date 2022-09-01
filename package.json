@@ -1,17 +1,22 @@
 {
+  "name": "todolist_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/dist/app.js"
+    "start": "npm run client && npm run server",
+    "server": "npm run start --prefix backend",
+    "client": "npm run build --prefix frontend"
   },
-  "dependencies": {
-    "body-parser": "^1.20.0",
-    "cors": "^2.8.5",
-    "express": "^4.18.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xarafeddine/todolist_react_node_typesctipt.git"
   },
-  "devDependencies": {
-    "@types/cors": "^2.8.12",
-    "@types/express": "^4.17.2",
-    "@types/node": "^12.12.9",
-    "nodemon": "^1.19.4"
-  }
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xarafeddine/todolist_react_node_typesctipt/issues"
+  },
+  "homepage": "https://github.com/xarafeddine/todolist_react_node_typesctipt#readme"
 }
